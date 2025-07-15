@@ -63,28 +63,6 @@ python persona_generator.py https://www.reddit.com/user/kojied/
   Source: https://www.reddit.com/r/AskReddit/comments/1hnx9q/h1b_holders_what_are_your_thoughts_on_the/
 ```
 
-## Flowchart
-The following flowchart illustrates the end-to-end process:
-
-```mermaid
-flowchart TD
-    A[Start: User provides Reddit Profile URL] --> B[Extract Username from URL]
-    B --> C[Initialize Reddit API PRAW with Credentials]
-    C --> D[Fetch User Posts (Submissions)]
-    C --> E[Fetch User Comments]
-    D --> F[Combine Posts and Comments]
-    E --> F
-    F --> G[Select Top 5 Most Relevant Items]
-    G --> H[Format Prompt: Instructions, Traits, Posts, Permalinks]
-    H --> I[Initialize Gemini LLM API with API Key]
-    I --> J[Send Prompt to Gemini LLM]
-    J --> K[Gemini LLM Analyzes Content and Generates Persona]
-    K --> L[Parse Output: Ensure Each Characteristic Has Evidence and Citation]
-    L --> M[Create or Ensure Output Directory Exists]
-    M --> N[Save Persona Output to Text File]
-    N --> O[End: Output Persona with Detailed Traits, Evidence, and Citations]
-```
-
 ## Notes
 - This project is for educational and demonstration purposes.
 - For production use, do not hardcode API keys; use environment variables or secure vaults.
