@@ -1,0 +1,5 @@
+praw
+transformers
+torch
+requests 
+google-generativeai
